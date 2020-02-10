@@ -12,7 +12,7 @@ class main{
 	static int Main(){
 		double x=1.23;
 		int nmax=100;
-		string s="helloÃ¸Ã¦Ã¥Âµ\n";
+		string s="hello\n";
 		Write(s);
 		int two=2;
 		int one=1;
