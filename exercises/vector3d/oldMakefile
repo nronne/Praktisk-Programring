@@ -1,0 +1,13 @@
+CSFLAGS = -warn:3 -optimize-
+
+out.txt : main.exe
+	mono $< > $@
+
+main.exe: main.cs vector3d.dll
+	msc $< -reference:$(word 2,$^)
+
+vector3d.dll: vector3d.cs
+	msc $(CSFLAGS) -target:library -out:$@ 
+
+clean:
+	rm -f out* *.exe
