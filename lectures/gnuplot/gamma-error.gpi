@@ -1,0 +1,9 @@
+set term svg background rgb "white"
+set out "Gamma-error.svg"
+set log y
+set format y "%g"
+set title "Relative error of our homemade Gamma function"
+set xlabel "x"
+set ylabel "abs(gamma-truegamma)/truegamma"
+set grid
+plot [][] "out.gamma.error.txt" using ($1):(abs(($2-$3)/$3)) with lines

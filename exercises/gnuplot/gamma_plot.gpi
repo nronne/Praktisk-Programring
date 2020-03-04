@@ -1,0 +1,9 @@
+set term svg 
+set out "Gamma_function.svg"
+set xlabel "x"
+set ylabel "y"
+set grid
+set tics out
+set key bottom right
+plot [-4:4.5][-5:5] "gamma_out.txt" w l title "Γ(x)" \
+     ,"gamma_tab.txt" with point pt 7 ps 0.7 title "Tabulated values"

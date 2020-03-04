@@ -1,0 +1,24 @@
+set title "Error function: computed vs. tabulated"
+set encoding utf8
+set term svg background rgb "white"
+set out "Erf.svg"
+set xlabel "x"
+set ylabel "y"
+set xzeroaxis
+set yzeroaxis
+set tics out
+set key bottom right
+plot [][-1.5:1.5] \
+ "out.erf.txt" with lines title "erf(x)" \
+,"table.erf.txt" with points pt 7 title "tabulated"
+set term jpeg small size 128,64 crop
+set out "erf.jpg"
+set notitle
+set noxlabel
+set noylabel
+set nokey
+set tics out
+set grid
+set xtics format ""
+set ytics format ""
+replot

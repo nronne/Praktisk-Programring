@@ -1,0 +1,8 @@
+i= 0+1i
+i*i=-1+0i
+exp(i*PI)=-1+1.22e-16i
+sin(i)=0+1.18i
+i^i=0.208+0i
+abs(i)=1
+arg(i)/PI=0.5
+i.Re=0, i.Im=1

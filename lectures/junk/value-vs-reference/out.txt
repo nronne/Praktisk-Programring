@@ -1,0 +1,11 @@
+--------------
+static: old string
+static: new string
+--------------
+struct: old string
+struct: new string
+struct: old string
+--------------
+class: old string
+class: new string
+class: new string

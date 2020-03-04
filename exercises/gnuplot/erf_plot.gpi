@@ -1,0 +1,9 @@
+set term svg 
+set out "Error_function.svg"
+set xlabel "x"
+set ylabel "y"
+set grid
+set tics out
+set key bottom right
+plot [][-1.1:1.1] "erf_out.txt" w l title "erf(x)" \
+     ,"erf_tab.txt" with point pt 7 ps 0.7 title "Tabulated values"
