@@ -1,0 +1,9 @@
+set term svg
+set out "Logistic.svg"
+set xlabel "x"
+set ylabel "y"
+set grid
+set tics out
+set key bottom right
+plot [][] "out.txt" w l title "Logistic" \
+     , "out_tab.txt" with point pt 7 ps 0.7 title "Tabulated values"
