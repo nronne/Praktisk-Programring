@@ -76,7 +76,7 @@ List<double> xlist=null, List<vector> ylist=null, int limit=999)
 	do{
 		if(a>=b) return ya;
 		if(nsteps>limit) {
-			Error.Write($"ode.driver nsteps>{limit}\n");
+			Error.Write($"ode.driver: nsteps>{limit}\n");
 			return ya;
 			}
 		if(a+h>b) h=b-a;

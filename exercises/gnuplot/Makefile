@@ -1,6 +1,6 @@
 all: Error_function.svg Gamma_function.svg
 
-matlib.dll: my_fun.cs
+matlib.dll: myFuns.cs
 	csc $^ -target:library -out:$@
 
 main.exe: main.cs matlib.dll

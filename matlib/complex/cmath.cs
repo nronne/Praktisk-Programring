@@ -21,6 +21,7 @@ public static void print(this complex z, string s)
 public static void printf(this complex z,string s)
 	{System.Console.WriteLine(s,z.Re,z.Im);}
 
+public static readonly complex I = new complex(0,1);
 
 public static double  exp(double x) {return Math.Exp(x);}
 public static complex exp(complex z){

@@ -1,0 +1,4 @@
+integral of ln(x)/sqrt(x) is -3.9999997021194
+integral of exp(-x^2) is 1.77245411516459
+Note: sqrt(pi) = 1.77245385090552
+integral of ln(1/x)^3 is 6.00000106018747
