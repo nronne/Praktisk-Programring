@@ -1,0 +1,29 @@
+%\pdfoutput=0
+\documentclass[twocolumn]{article}
+\usepackage{graphicx}
+\title{The spherical bessel functions}
+\author{N. ~R\o nne}
+\begin{document}
+\maketitle
+
+\noindent
+When solving the Helmholtz equation in spherical coordinates by separation of variables, the radial equation has the form
+\begin{equation}
+  x^2 \frac{d^2 y}{dx^2} + 2x \frac{dy}{dx} + \left(x^2 - n(n + 1)\right) y = 0.
+\end{equation}
+
+The two linearly independent solutions to this equation are called the spherical Bessel functions$j_n$ and $y_nn$, and are related to the ordinary Bessel functions $J_n$ and $Y_n$ by
+\begin{equation}
+  j_n(x) = \sqrt{\frac{\pi}{2x}} J_{n+\frac{1}{2}}(x).
+\end{equation}
+
+
+
+
+\begin{figure}[h]
+  \input{plot_bessel.tex}
+  \caption{Illustration of the first three spherical bessel functions.}
+\end{figure}
+
+
+\end{document}
