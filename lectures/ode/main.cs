@@ -13,13 +13,16 @@ static int Main(string[] args){
 		if(ws[0]=="y1") y1=double.Parse(ws[1]);
 		if(ws[0]=="b") b=double.Parse(ws[1]);
 		}
+/*
 	Func<double,vector,vector> sincos=delegate(double x, vector y){
 		return new vector(y[1],-y[0]);
 	};
+*/
+	Func<double,vector,vector> sincos=(x,y)=>new vector(y[1],-y[0]);
 	vector ya=new vector(y0,y1);
 	List<double> xs=new List<double>();
 	List<vector> ys=new List<vector>();
-	vector yb=ode.rk23(sincos,a,ya,b,xs,ys);
+	ode.rk23(sincos,a,ya,b,xlist:xs,ylist:ys);
 	for(int i=0;i<xs.Count;i++)
 		WriteLine($"{xs[i]} {ys[i][0]} {ys[i][1]}");
 return 0;
