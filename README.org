@@ -8,5 +8,5 @@ Exercises, problems and lecture material for the course /praktical programming &
 
 Clone repository as 
 #+BEGIN_SRC shell
-git clone https://github.com/nronne/Praktisk-Programring
+git clone https://github.com/nronne/ppnm
 #+END_SRC
