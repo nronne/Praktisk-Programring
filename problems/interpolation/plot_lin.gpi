@@ -1,0 +1,9 @@
+set term svg
+set out "Plot_lin.svg"
+set xlabel "x"
+set ylabel "y"
+set grid
+set tics out
+set key top right
+plot "sin_values.txt" w p pt 7 ps 0.6 title "datapoints for sin(x)" \
+     ,"sin_lspline.txt" w l title "linear spline"

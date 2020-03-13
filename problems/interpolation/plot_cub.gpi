@@ -1,0 +1,9 @@
+set term svg
+set out "Plot_cub.svg"
+set xlabel "x"
+set ylabel "y"
+set grid
+set tics out
+set key top right
+plot [][-1.1:1.1] "sin_values.txt" w p pt 7 ps 0.6 title "datapoints for sin(x)" \
+     ,"sin_cspline.txt" w l title "cubic spline"
