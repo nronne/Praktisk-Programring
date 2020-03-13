@@ -1,0 +1,12 @@
+#+TITLE:     Practical programming & Numerical methods
+#+AUTHOR:    Nikolaj Rønne
+#+EMAIL:     
+#+DESCRIPTION: Repository for course.
+#+LANGUAGE:  en
+
+Exercises, problems and lecture material for the course /praktical programming & numerical methods/. 
+
+Clone repository as 
+#+BEGIN_SRC shell
+git clone https://github.com/nronne/Praktisk-Programring
+#+END_SRC
