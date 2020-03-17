@@ -4,7 +4,7 @@
 #+DESCRIPTION: Repository for course.
 #+LANGUAGE:  en
 
-Exercises, problems and lecture material for the course /praktical programming & numerical methods/. 
+Exercises, problems and lecture material for the course /practical programming & numerical methods/. 
 
 Clone repository as 
 #+BEGIN_SRC shell
