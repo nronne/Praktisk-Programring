@@ -15,10 +15,10 @@ class main {
 
 	
 	Write("----------(A.2)-----------\n");
-	a = randomMatrix(4, 4);
+	a = randomMatrix(5, 5);
 	a.print("A = ");
 	qr = new qrDecompositionGS(a);
-	vector b = randomVector(4);
+	vector b = randomVector(5);
 	b.print("b = ");
 	vector x = qr.solve(b);
 	x.print("x = ");

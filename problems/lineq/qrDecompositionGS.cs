@@ -46,11 +46,11 @@ public class qrDecompositionGS{
 
     
     public vector solve(vector b) {
-	vector x = new vector(b.size);
+	vector x = new vector(q.size2);
 	vector c = q.transpose() * b;
-	for (int i=b.size-1; i>=0; i--) {
+	for (int i=x.size-1; i>=0; i--) {
 	    x[i] = c[i];
-	    for (int j=i+1; j<b.size; j++) {
+	    for (int j=i+1; j<x.size; j++) {
 		x[i] -= r[i,j]*x[j];
 	    }
 	    x[i] /= r[i,i];
