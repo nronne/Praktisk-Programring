@@ -1,0 +1,9 @@
+set term svg
+set out "Plot_Rutherford_Soddy.svg"
+set xlabel "t"
+set ylabel "activity"
+set grid
+set tics out
+set key top right
+plot [0.75:14][] "out.txt" w l title "ordinary least squares fit" \
+     ,"data.txt" w yerr pt 7 ps 0.6 title "data" 
