@@ -1,40 +1,54 @@
 using static System.Math;
-public class qrdecomposition{
+public partial class qrdecomposition{
 
-public matrix data;
+public matrix QR;
 
 public qrdecomposition(matrix M){
 matrix A = M.copy();
 for(int q=0;q<A.size2;q++){
 	for(int p=q+1;p<A.size1;p++){
       		double theta=Atan2(A[p,q],A[q,q]);
+		double c=Cos(theta),s=Sin(theta);
 		for(int k=q;k<A.size2;k++){
 			double xq=A[q,k], xp=A[p,k];
-			A[q,k]=+xq*Cos(theta)+xp*Sin(theta);
-			A[p,k]=-xq*Sin(theta)+xp*Cos(theta);
+			A[q,k]= xq*c+xp*s;
+			A[p,k]=-xq*s+xp*c;
 			}
+System.Console.Error.WriteLine(A[p,q]);
 		A[p,q]=theta;
 		}
 	}
-data = A;
+QR = A;
 }
 
-public vector solve(vector rhs){
-	vector b=rhs.copy();
-	for(int q=0;q<data.size2;q++){
-		for(int p=q+1;p<data.size1;p++){
-			double theta = data[p,q];
+public vector solve(vector r){
+	vector b=r.copy();
+	for(int q=0;q<QR.size2;q++){
+		for(int p=q+1;p<QR.size1;p++){
+			double theta = QR[p,q];
+			double c=Cos(theta),s=Sin(theta);
 			double xq=b[q], xp=b[p];
-			b[q]=+xq*Cos(theta)+xp*Sin(theta);
-			b[p]=-xq*Sin(theta)+xp*Cos(theta);
+			b[q]=+xq*c+xp*s;
+			b[p]=-xq*s+xp*c;
 			}
 		}
-	vector x = new vector(data.size2);
-	for(int i=data.size2-1;i>=0;i--){
-		double s=0; for(int k=i+1;k<data.size2;k++) s+=data[i,k]*x[k];
-		x[i]=(b[i]-s)/data[i,i];
+	vector x = new vector(QR.size2);
+	for(int i=QR.size2-1;i>=0;i--){
+		double s=0; for(int k=i+1;k<QR.size2;k++) s+=QR[i,k]*x[k];
+		x[i]=(b[i]-s)/QR[i,i];
 		}
 	return x;
-}//solve
+	}//solve
 
+public matrix inverse(){
+	int m=QR.size2;
+	var B=new matrix(m,m);
+	var e=new vector(m);
+	for(int i=0;i<m;i++){
+		e[i]=1;
+		B[i]=solve(e);
+		e[i]=0;
+		}
+	return B;
+	}//inverse
 }

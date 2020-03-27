@@ -59,14 +59,17 @@ public double dot(vector o){
 	for(int i=0;i<size;i++)sum+=this[i]*o[i];
 	return sum;
 	}
+public static double operator%(vector a,vector b){
+	return a.dot(b);
+	}
 
 public double norm(){
 	double meanabs=0;
-	for(int i=0;i<size;i++)meanabs+=this[i];
+	for(int i=0;i<size;i++)meanabs+=Abs(this[i]);
 	meanabs/=size;
 	double sum=0;
 	for(int i=0;i<size;i++)sum+=(this[i]/meanabs)*(this[i]/meanabs);
-	return meanabs*sum;
+	return meanabs*Sqrt(sum);
 	}
 
 public vector copy(){
@@ -91,6 +94,12 @@ public bool approx(vector o){
 	for(int i=0;i<size;i++)
 		if(!approx(this[i],o[i]))return false;
 	return true;
+	}
+
+public vector map(Func<double,double> f){
+	vector v=this.copy();
+	for(int i=0;i<v.size;i++)v[i]=f(v[i]);
+	return v;
 	}
 
 }//vector

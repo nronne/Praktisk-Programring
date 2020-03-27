@@ -1,5 +1,5 @@
 Out.txt:main.exe
-	mono $< > $@
+	mono $< > $@ 2>log
 
 main.exe: main.cs matlib.dll
 	mcs $< -reference:$(lastword $^)

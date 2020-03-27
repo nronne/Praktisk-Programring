@@ -15,13 +15,14 @@ if(!IsInfinity(a) && IsPositiveInfinity(b))
 if(IsNegativeInfinity(a) && IsPositiveInfinity(b))
 	return o8av(f,a,0,acc,eps)+o8av(f,0,b,acc,eps);
 return o8a(t=>f(a+(b-a)*(3*t*t-2*t*t*t))*(b-a)*6*(t-t*t) ,0,1,acc,eps);
+//return o8a(t=>f((a+b)/2+(b-a)/2*Cos(t))*Sin(t)*(b-a)/2,0,PI,acc,eps);
 }//o8av
 
 public static double o8a
 (Func<double,double> f,double a,double b,
 double acc=1e-6,double eps=1e-6,
 double f2=NaN,double f3=NaN, double f6=NaN,double f7=NaN,
-int nrec=0,int limit=100)
+int nrec=0,int limit=10)
 {
 /// Open 8-point Aadaptive integrator with reuse of points.
 double h=b-a,sqr2=Sqrt(2);
@@ -35,10 +36,13 @@ w5=w4,w6=w3,w7=w2,w8=w1,
 u5=u4,u6=u3,u7=u2,u8=u1;
 double integral= (w1*f1+w2*f2+w3*f3+w4*f4+w5*f5+w6*f6+w7*f7+w8*f8)*h;
 double approx  = (u1*f1+u2*f2+u3*f3+u4*f4+u5*f5+u6*f6+u7*f7+u8*f8)*h;
-double error=Abs(integral-approx)/2;
+double error=Abs(integral-approx)/1.5;
 double tolerance=acc+eps*Abs(integral);
 if(error<tolerance) return integral;
-else if(++nrec>limit) return NaN;
+else if(++nrec>limit){
+	Console.Error.Write($"o8a: nrec>{limit} a={a} b={b}\n");
+	return integral;
+	}
 else return o8a(f,a,(a+b)/2,acc/sqr2,eps,f1,f2,f3,f4,nrec,limit)+
 		o8a(f,(a+b)/2,b,acc/sqr2,eps,f5,f6,f7,f8,nrec,limit);
 }//o8a
