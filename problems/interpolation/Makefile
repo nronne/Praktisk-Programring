@@ -13,12 +13,12 @@ out.txt sin_values.txt sin_lspline.txt sin_qspline.txt sin_cspline.txt: main.exe
 	mono $< >out.txt
 
 main.exe: main.cs interpolation.cs matlib.dll
-	csc $(word 1, $^) $(word 2, $^) -reference:$(lastword  $^) -out:$@
+	mcs $(word 1, $^) $(word 2, $^) -reference:$(lastword  $^) -out:$@
 
 LIBDIR = ../../matlib
 SRC += $(LIBDIR)/matrix/vector.cs
 matlib.dll: $(SRC)
-	csc $^ -target:library -out:$@
+	mcs $^ -target:library -out:$@
 
 make clean:
-	$(RM) *.exe *.txt *.dll
+	$(RM) *.exe *.txt *.dll *.svg
