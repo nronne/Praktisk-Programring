@@ -2,7 +2,7 @@
 
 all: Plot_box_wavefun.svg Plot_box_energy.svg
 
-outB.txt: mainB.exe
+outB.txt: mainB.exe mainB.cs
 	mono $< >$@
 
 mainB.exe: mainB.cs mainA.cs diag.cs matlib.dll

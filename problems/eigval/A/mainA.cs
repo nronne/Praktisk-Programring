@@ -7,6 +7,17 @@ class mainA {
     static void Main(){
 	randomTest(5);
 	particleInBox(99);
+
+	Write("\n \n__________________B(test)_________________\n \n");
+	int firstN = 2;
+	matrix A = randomSymmetricMatrix(5);
+	diagJacobi firstTest = new diagJacobi(A, firstN, eigVec:true, largestFirst:false);
+	(firstTest.l).print("eigenvalues (only first 2): ");
+	(firstTest.v).print("eigenvectors (only first 2): ");
+	diagJacobi test = new diagJacobi(A, eigVec:true);
+	(test.v).print("eigenvectors correct: ");
+	(test.l).print("eigenvalues correct: ");
+	
     }//Main
 
 
