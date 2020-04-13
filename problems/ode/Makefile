@@ -1,3 +1,6 @@
+out.txt: main.exe main.cs rk.cs
+	mono $< > $@ 2> log.txt
+
 main.exe: main.cs rk.cs matlib.dll
 	csc $(word 1, $^) $(word 2, $^) -reference:$(lastword $^) -out:$@ 
 
