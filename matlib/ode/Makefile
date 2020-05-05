@@ -1,28 +1,28 @@
-DATA = out.txt
+DATA = out.data
 PLOT = plot.svg
-$(PLOT): plot.gpi $(DATA)
-	gnuplot $<
+all: $(PLOT)
 $(DATA): main.exe
-	mono $< 1> $@ 2> log
+	mono $< 1> $@ 2> Log
 	
 main.exe: main.cs matlib.dll
 	mcs $< -reference:matlib.dll
 
-matlib.dll: ode.cs ../matrix/vector.cs
+matlib.dll: driver.cs rkstep23.cs ../matrix/vector.cs
 	mcs -target:library -out:$@ $^
 
 clean:
-	rm -f *.dll *.exe out* *.svg
+	rm -f *.dll *.exe out* *.svg [Ll]og*
 
-plot.gpi: Makefile
-	cat /dev/null > $@
-	echo 'set term svg fsize 18 background rgb "white"' >> $@
-	echo 'set out "$(PLOT)"' >> $@
-	echo 'set key out' >>$@
-	echo 'set tics out' >>$@
-	echo 'set xlabel "x"' >>$@
-	echo 'plot \' >>$@
-	echo ' "$(DATA)" using 1:2 with points pt 7 ps 0.5 title "sin" \' >>$@
-	echo ',"$(DATA)" using 1:3 with lines title "cos" \' >>$@
-	echo ',"$(DATA)" using ($$1):(0) w p pt 7 ps 0.1 not \' >>$@
+$(PLOT): $(DATA) Makefile
+	echo '\
+	set term svg fsize 18 background rgb "white";\
+	set out "$(PLOT)";\
+	set key out;\
+	set tics out;\
+	set xlabel "x";\
+	plot \
+	 "$(DATA)" using 1:2 with linespoints pt 7 ps 0.5 title "sin" \
+	,"$(DATA)" using 1:3 with linespoints pt 5 ps 0.5 title "cos" \
+	,"$(DATA)" using ($$1):(0) w p pt 7 ps 0.1 not \
+	'|gnuplot
 	

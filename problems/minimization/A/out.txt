@@ -1,0 +1,4 @@
+_________Rosenbrock's valley function_______
+xmin=         1          1 
+_________Himmelblau's function_______
+xmin=         3          2 

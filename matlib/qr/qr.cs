@@ -14,7 +14,6 @@ for(int q=0;q<A.size2;q++){
 			A[q,k]= xq*c+xp*s;
 			A[p,k]=-xq*s+xp*c;
 			}
-System.Console.Error.WriteLine(A[p,q]);
 		A[p,q]=theta;
 		}
 	}

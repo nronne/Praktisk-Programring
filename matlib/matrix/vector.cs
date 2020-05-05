@@ -1,6 +1,8 @@
 // (C) 2020 Dmitri Fedorov; License: GNU GPL v3+; no warranty.
 using System;
+using System.IO;
 using static System.Math;
+using static System.Console;
 public partial class vector{
 
 private double[] data;
@@ -21,19 +23,37 @@ public vector(double a, double b, double c)
 	{ data = new double[]{a,b,c}; }
 public vector(double a, double b, double c, double d)
 	{ data = new double[]{a,b,c,d}; }
+public vector(string s){
+        string[] words = s.Split(',',' ');
+        int n = words.Length;
+        data = new double[n];
+        for(int i=0;i<size;i++){
+                        this[i]=double.Parse(words[i]);
+                        }
+	}
+
 
 public static implicit operator vector (double[] a){ return new vector(a); }
 public static implicit operator double[] (vector v){ return v.data; }
 
 public void print(string s="",string format="{0,10:g3} "){
-	System.Console.Write(s);
-	for(int i=0;i<size;i++) System.Console.Write(format,this[i]);
-	System.Console.Write("\n");
+	this.fprint(Console.Out,s,format);
+	}
+
+public void fprint(TextWriter file,string s="",string format="{0,10:g3} "){
+	file.Write(s);
+	for(int i=0;i<size;i++) file.Write(format,this[i]);
+	file.Write("\n");
 }
 
 public static vector operator+(vector v, vector u){
 	vector r=new vector(v.size);
 	for(int i=0;i<r.size;i++)r[i]=v[i]+u[i];
+	return r; }
+
+public static vector operator-(vector v){
+	vector r=new vector(v.size);
+	for(int i=0;i<r.size;i++)r[i]=-v[i];
 	return r; }
 
 public static vector operator-(vector v, vector u){
@@ -63,9 +83,16 @@ public static double operator%(vector a,vector b){
 	return a.dot(b);
 	}
 
+public vector map(System.Func<double,double>f){
+	vector v=new vector(size);
+	for(int i=0;i<size;i++)v[i]=f(this[i]);
+	return v;
+	}
+
 public double norm(){
 	double meanabs=0;
 	for(int i=0;i<size;i++)meanabs+=Abs(this[i]);
+	if(meanabs==0)meanabs=1;
 	meanabs/=size;
 	double sum=0;
 	for(int i=0;i<size;i++)sum+=(this[i]/meanabs)*(this[i]/meanabs);
@@ -94,12 +121,6 @@ public bool approx(vector o){
 	for(int i=0;i<size;i++)
 		if(!approx(this[i],o[i]))return false;
 	return true;
-	}
-
-public vector map(Func<double,double> f){
-	vector v=this.copy();
-	for(int i=0;i<v.size;i++)v[i]=f(v[i]);
-	return v;
 	}
 
 }//vector

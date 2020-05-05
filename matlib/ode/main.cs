@@ -19,12 +19,12 @@ F=delegate(double x, vector y){
 static void Main(){
 	double a=0;
 	vector ya=new vector(0,1);
-	double b=10;
+	double b=2.25*PI;
 	double h=0.1,acc=1e-3,eps=1e-3;
 	var xs=new List<double>();
 	var ys=new List<vector>();
 
-vector y=ode.rk23(F,a,ya,b,acc,eps,h,xlist:xs,ylist:ys);
+vector y=ode.rk23(F,a,ya,b,acc:acc,eps:eps,h:h,xlist:xs,ylist:ys);
 
 	Error.WriteLine($"y0    ={y[0]}    y1\t={y[1]}");
 	Error.WriteLine($"sin(b)={Sin(b)} cos(b)\t={Cos(b)}");
