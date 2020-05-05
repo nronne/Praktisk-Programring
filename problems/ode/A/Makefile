@@ -13,15 +13,16 @@ sincos.svg: out.txt main.cs
 
 
 
-out.txt: main.exe main.cs rk.cs
+out.txt: main.exe main.cs
 	mono $< > $@ 2> log.txt
 
-main.exe: main.cs rk.cs matlib.dll
-	csc $(word 1, $^) $(word 2, $^) -reference:$(lastword $^) -out:$@ 
+main.exe: main.cs  matlib.dll
+	csc $< -reference:$(lastword $^) -out:$@ 
 
-LIBDIR = ../../matlib
+LIBDIR = ../../../matlib
 SRC += $(LIBDIR)/matrix/vector.cs
 SRC += $(LIBDIR)/matrix/matrix.cs
+SRC += ../rk.cs
 matlib.dll: $(SRC)
 	csc $^ -target:library -out:$@
 
