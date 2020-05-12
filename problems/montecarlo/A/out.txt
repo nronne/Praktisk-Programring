@@ -1,0 +1,6 @@
+____ Test _____
+value 3.1392 with error 0.0164384408019739
+Test passed!
+
+____ integral exercise _____ 
+value 1.38329369927047 with error 0.00720645856232018
