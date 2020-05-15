@@ -1,10 +1,10 @@
 all: Error_function.svg Gamma_function.svg
 
-matlib.dll: myFuns.cs
-	csc $^ -target:library -out:$@
+funlib.dll: myFuns.cs
+	mcs $^ -target:library -out:$@
 
-main.exe: main.cs matlib.dll
-	csc $<  -reference:matlib.dll -out:$@
+main.exe: main.cs funlib.dll
+	mcs $<  -reference:$(word 2, $^) -out:$@
 
 erf_out.txt gamma_out.txt: main.exe
 	mono $< gamma_out.txt  > erf_out.txt
