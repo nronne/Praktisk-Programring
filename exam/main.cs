@@ -17,6 +17,17 @@ class main {
 	gkl.B.print("\n B = ");
 
 	(A-gkl.U*gkl.B*gkl.V.transpose()).print("\n 0 = A - U*B*V^T =");
+
+	Write("\n Use bidiagonalization to solve Ax=b equation:\n");
+	A = new matrix("1,1,1;0,2,5;2,5,-1");
+	A.print("A");
+	vector b = new vector("6,-4,27");
+	b.print("b=");
+	gkl = new bidiag(A);
+	gkl.solver(b).print("x=");
+	Write($"|Det(A)| = {gkl.determinant()}\n");
+	gkl.inverse().print("A^-1 = ");
+	(gkl.inverse()*A).print("A^-1 * A = ");
 	
 	if(differenceTest(1e-8) == 0) {
 	    Write("All test PASSED! \n");
@@ -24,6 +35,8 @@ class main {
 	else {
 	    Write("One or several test FAILED! \n");
 	}
+
+		
 	
     } //Main
 

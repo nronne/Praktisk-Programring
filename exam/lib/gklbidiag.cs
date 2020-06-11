@@ -1,3 +1,4 @@
+using System;
 using static System.Math;
 
 public class bidiag {
@@ -41,4 +42,53 @@ public class bidiag {
 	    }
 	}
     }//gkl
+
+    public vector solver(vector b) {
+	vector x = new vector(A.size1);
+	vector c = U.transpose() * b;
+	for (int i=x.size-1; i>=0; i--) {
+	    x[i] = c[i];
+	    for (int j=i+1; j<x.size; j++) {
+		x[i] -= B[i,j]*x[j];
+	    }
+	    x[i] /= B[i,i];
+	}
+
+	x = V*x;
+	return x;
+    } //solver
+
+    public double determinant() {
+	if (A.size1 != A.size2) {
+	    throw new ArgumentException("Matrix must be square!");
+	}
+	double d = 1;
+	for(int i=0; i<B.size1; i++){
+	    d *= B[i,i];
+	}
+	return d;
+    }
+    
+    public matrix inverse() {
+	if (A.size1 != A.size2) {
+	    throw new ArgumentException("Matrix must be square!");
+	}
+	matrix invA = new matrix(A.size1, A.size1);
+	vector ei = new vector(A.size1);
+	vector xi = new vector(A.size1);
+	for (int i=0; i<A.size1; i++) {
+	    for (int j=0; j<A.size1; j++) {
+		ei[j] = 0;
+		if (i==j) ei[j] = 1;
+	    }
+	    xi = this.solver(ei);
+	    for (int j=0; j<A.size1; j++) {
+		invA[j, i] = xi[j];
+	    }
+	}
+	return invA;
+    } //inverse
+    
+    
+
 }//bidiag

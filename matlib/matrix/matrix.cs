@@ -102,6 +102,14 @@ public static vector operator* (matrix a, vector v){
 	return u;
 	}
 
+public static vector operator* (vector v, matrix a) {
+    var u = new vector(a.size2);
+    for(int k=0; k<a.size1; k++)
+    for(int i=0; i<a.size2; i++)
+	    u[i]+=a[k,i]*v[k];
+    return u;
+}
+
 public static vector operator% (matrix a, vector v){
 	var u = new vector(a.size2);
 	for(int k=0;k<a.size1;k++)
