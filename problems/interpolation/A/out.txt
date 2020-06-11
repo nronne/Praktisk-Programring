@@ -1,0 +1,1 @@
+Integral from 0 to pi of sin(x) with linear spline: 1.95848018694088

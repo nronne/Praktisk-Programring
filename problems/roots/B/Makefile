@@ -7,7 +7,7 @@ main.exe: main.cs matlib.dll
 LIBDIR = ../../../matlib/
 MATLIB = $(LIBDIR)/matrix/vector.cs
 MATLIB += $(LIBDIR)/matrix/matrix.cs
-MATLIB += ../../lineq/qrDecompositionGS.cs
+MATLIB += ../../lineq/lib/qrDecompositionGS.cs
 MATLIB += newton.cs
 MATLIB += ../../ode/rk.cs
 matlib.dll: $(MATLIB)

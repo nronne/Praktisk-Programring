@@ -1,1 +1,1 @@
-energy of s-wave ground state: -0.445118275062616 Hartree 
+energy of s-wave ground state: -0.445118275062618 Hartree 

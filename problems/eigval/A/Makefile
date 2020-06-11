@@ -6,7 +6,7 @@ outB.txt: mainB.exe mainB.cs
 	mono $< >$@
 
 mainB.exe: mainB.cs mainA.cs diag.cs matlib.dll
-	csc $(word 1, $^) $(word 2, $^) $(word 3, $^) -reference:$(lastword $^) -out:$@
+	mcs $(word 1, $^) $(word 2, $^) $(word 3, $^) -reference:$(lastword $^) -out:$@
 
 Plot_box_wavefun.svg: box_wavefun.txt Makefile
 	echo '\
@@ -42,13 +42,13 @@ outA.txt box_energies.txt box_wavefun.txt: mainA.exe
 	mono $< > outA.txt
 
 mainA.exe: mainA.cs diag.cs matlib.dll
-	csc $(word 1, $^) $(word 2, $^) -reference:$(lastword $^) -out:$@
+	mcs $(word 1, $^) $(word 2, $^) -reference:$(lastword $^) -out:$@
 
 LIBDIR = ../../../matlib
 SRC += $(LIBDIR)/matrix/vector.cs
 SRC += $(LIBDIR)/matrix/matrix.cs
 matlib.dll: $(SRC)
-	csc $^ -target:library -out:$@
+	mcs $^ -target:library -out:$@
 
 make clean:
 	$(RM) *.exe *.txt *.dll *.svg

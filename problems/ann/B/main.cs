@@ -27,8 +27,8 @@ class main {
 	    p[i*3+1] = 1;
 	    p[i*3+2] = 1;
 	}
-	gaussian10.p = p;
-	gaussian10.train(x, y);
+	gaussian3.p = p;
+	gaussian3.train(x, y);
 
 	/* 
 	   See how well it predicts on unseen data

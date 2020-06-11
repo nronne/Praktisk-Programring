@@ -7,10 +7,10 @@ main.exe: main.cs matlib.dll
 LIBDIR = ../../../matlib/matrix
 MATLIB = $(LIBDIR)/vector.cs
 MATLIB += $(LIBDIR)/matrix.cs
-MATLIB += ../../lineq/qrDecompositionGS.cs
+MATLIB += ../../lineq/lib/qrDecompositionGS.cs
 MATLIB += newton.cs
 matlib.dll: $(MATLIB)
 	mcs -target:library -out:$@ $^
 
 clean:
-	$(RM) *.exe *.txt *.log
+	$(RM) *.exe *.txt *.log *.dll

@@ -1,0 +1,42 @@
+Example of Golub-Kahan-Lanczos bidiagonalization on tall matrix:
+A =
+      3.19       3.63       9.41 
+      8.35       2.55       8.79 
+      6.05       2.42          3 
+      7.97       8.63       0.43 
+      5.32       2.26       6.02 
+
+ U = 
+     0.458     -0.124      0.834 
+     0.555      0.518     -0.164 
+     0.324      0.192     -0.406 
+      0.48     -0.792     -0.335 
+     0.384      0.228    0.00361 
+
+ V = 
+     0.577      0.565      -0.59 
+     0.577     -0.793     -0.194 
+     0.577      0.229      0.784 
+
+ U^T*A*V = 
+      20.5       3.72  -6.41e-13 
+ -1.58e-13       5.09       4.89 
+ -1.92e-12  -3.72e-13       6.47 
+
+ B = 
+      20.5       3.72          0 
+         0       5.09       4.89 
+         0          0       6.47 
+
+ 0 = A - U*B*V^T =
+ -6.04e-14  -1.07e-14   3.22e-13 
+ -1.74e-13  -6.84e-14   3.29e-13 
+ -1.54e-13  -7.15e-14    1.4e-13 
+ -2.86e-13  -1.49e-13   1.07e-13 
+ -1.15e-13  -4.53e-14   2.25e-13 
+
+ ===== Difference Test =====
+Performed by calculating the difference: A - U*B*V^T = 0. 
+Square matrix difference test PASSED!
+Tall matrix difference test PASSED!
+All test PASSED! 

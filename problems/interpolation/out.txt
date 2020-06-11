@@ -1,9 +1,0 @@
-Integral from 0 to pi of sin(x) with linear spline: 1.95848018694088
-Integral from 0 to pi of sin(x) with quadratic spline: 2.00081010218218
-True result from analytic expression is: 2.00
-Derivative of sin(x) evaluated at pi/4: 0.739252868759998
-True result from analytic expression is: 1/sqrt(2) or 0.707106781186547 
-Integral from 0 to pi of sin(x) with cubic spline: 1.99981370509376
-True result from analytic expression is: 2.00
-Derivative of sin(x) evaluated at pi/4: 0.74390051889029
-True result from analytic expression is: 1/sqrt(2) or 0.707106781186547 
