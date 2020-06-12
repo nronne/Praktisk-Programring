@@ -48,9 +48,10 @@ public class bidiag {
 	vector c = U.transpose() * b;
 	for (int i=x.size-1; i>=0; i--) {
 	    x[i] = c[i];
-	    for (int j=i+1; j<x.size; j++) {
-		x[i] -= B[i,j]*x[j];
+	    if(i+1<x.size){
+		x[i] -= B[i, i+1]*x[i+1];
 	    }
+	    
 	    x[i] /= B[i,i];
 	}
 

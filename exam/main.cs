@@ -28,8 +28,15 @@ class main {
 	Write($"|Det(A)| = {gkl.determinant()}\n");
 	gkl.inverse().print("A^-1 = ");
 	(gkl.inverse()*A).print("A^-1 * A = ");
-	
-	if(differenceTest(1e-8) == 0) {
+
+	int success = 0;
+	double eps = 1e-8;
+	success = tests.differenceTest(eps);
+	success += tests.solverTest(eps);
+	success += tests.inverseTest(eps);
+
+	Write("\n ===== Tests result =====\n");
+	if(success == 0) {
 	    Write("All test PASSED! \n");
 	}
 	else {
@@ -39,54 +46,4 @@ class main {
 		
 	
     } //Main
-
-    static int differenceTest(double eps) {
-	Write("\n ===== Difference Test =====\n");
-	Write("Performed by calculating the difference: A - U*B*V^T = 0. \n");
-	
-	int successSquare = 0;
-	for(int i=2; i<6; i++){
-	    matrix A = rndMat.randomMatrix(i, i);
-	    var gkl = new bidiag(A);
-	    matrix diff = A-gkl.U*gkl.B*gkl.V.transpose();
-	    for(int m=0; m<i;m++){
-		for(int n=0; n<i; n++){
-		    if(Abs(diff[m,n])>eps) {
-			successSquare = 1;
-		    }
-		}
-	    }
-	}
-	if(successSquare == 0) {
-	    Write("Square matrix difference test PASSED!\n");
-	}
-	else {
-	    Write("Square matrix difference test FAILED!\n");
-	}
-	
-	
-	int successTall = 0;
-	for(int i=3; i<6; i++){
-	    for(int j=2; j<i; j++) {
-		matrix A = rndMat.randomMatrix(i,j);
-		var gkl = new bidiag(A);
-		matrix diff = A-gkl.U*gkl.B*gkl.V.transpose();
-		for(int m=0; m<i;m++){
-		    for(int n=0; n<j; n++){
-			if(Abs(diff[m,n])>eps) {
-			    successTall = 1;
-			}
-		    }
-		}
-	    }
-	}
-	if(successTall == 0) {
-	    Write("Tall matrix difference test PASSED!\n");
-	}
-	else {
-	    Write("Tall matrix difference test FAILED!\n");
-	}
-	
-	return successSquare + successTall;   
-    }
 } //main

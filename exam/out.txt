@@ -1,39 +1,39 @@
 Example of Golub-Kahan-Lanczos bidiagonalization on tall matrix:
 A =
-      2.41       3.83       7.71 
-      8.32       5.84        5.9 
-      2.77       1.88       4.01 
-      3.71     0.0168        5.5 
-      1.81       3.12       9.31 
+       9.3       4.38       9.42 
+      5.03       9.34       9.57 
+      4.52       9.35       4.29 
+      2.19       9.13       6.52 
+      9.61       1.81     0.0187 
 
  U = 
-     0.451      0.213       0.43 
-     0.648     -0.716    -0.0867 
-     0.279     0.0147    -0.0992 
-     0.298      0.379      -0.84 
-     0.459      0.546      0.305 
+     0.532     -0.423      0.587 
+     0.551      0.247      0.206 
+     0.418      0.229      -0.56 
+     0.411      0.442     -0.125 
+     0.263     -0.716     -0.533 
 
  V = 
-     0.577     -0.227     -0.784 
-     0.577     -0.566      0.589 
-     0.577      0.793      0.195 
+     0.577     -0.771     -0.268 
+     0.577      0.617     -0.534 
+     0.577      0.154      0.802 
 
  U^T*A*V = 
-      17.9       5.05  -4.96e-13 
- -6.26e-14       5.28        2.3 
- -2.72e-12  -8.35e-13       3.21 
+      25.1       1.85  -8.36e-12 
+ -3.71e-13       9.48      0.959 
+ -3.92e-11  -3.37e-12       5.33 
 
  B = 
-      17.9       5.05          0 
-         0       5.28        2.3 
-         0          0       3.21 
+      25.1       1.85          0 
+         0       9.48      0.959 
+         0          0       5.33 
 
  0 = A - U*B*V^T =
- -1.59e-13   1.52e-13   9.24e-14 
- -2.58e-13   1.42e-13   2.31e-14 
- -1.14e-13   7.62e-14   2.49e-14 
- -1.52e-13   7.57e-14          0 
- -1.68e-13   1.67e-13   1.03e-13 
+ -7.64e-13  -1.71e-12   4.01e-12 
+ -1.07e-12  -2.16e-12   4.03e-12 
+ -1.46e-12  -2.43e-12   2.33e-12 
+ -1.02e-12   -1.9e-12   2.82e-12 
+ -1.19e-12  -1.81e-12   9.09e-13 
 
  Use bidiagonalization to solve Ax=b equation:
 A
@@ -56,4 +56,14 @@ A^-1 * A =
 Performed by calculating the difference: A - U*B*V^T = 0. 
 Square matrix difference test PASSED!
 Tall matrix difference test PASSED!
+
+ ===== Solver Test =====
+Performed by calculating the difference: Ax - b = 0. 
+Solver test PASSED!
+
+ ===== Inverse Test =====
+Performed by calculating the difference: A*A^-1 - I = 0. 
+Inverse test PASSED!
+
+ ===== Tests result =====
 All test PASSED! 

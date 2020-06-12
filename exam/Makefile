@@ -10,6 +10,7 @@ SRC += $(MATLIB)/matrix/vector.cs
 SRC += $(MATLIB)/matrix/matrix.cs
 SRC += $(LIB)/gklbidiag.cs
 SRC += $(LIB)/randommatrix.cs
+SRC += $(LIB)/tests.cs
 matlib.dll: $(SRC)
 	mcs $^ -target:library -out:$@
 
