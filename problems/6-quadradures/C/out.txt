@@ -1,0 +1,37 @@
+===== Test of integration with infinity as limit ====
+
+   exp(-x^2) from -infinity to infinity.
+Analytic result:      sqrt(pi)
+
+  o4av:
+Result:              1.76769802184948
+Deviation:           -0.00475582905603633
+Function calls:      24
+Recursion calls:     5
+absulute accuracy:   0.01
+relative accuracy:   0.01
+
+  o8av from matlib:
+Result:              1.7726940024867
+Deviation:           0.000240151581187398
+absulute accuracy:   0.01
+relative accuracy:   0.01
+_________________________________________________
+
+  1/(x+1)/sqrt(x) from 0 to infinity.
+Analytic result:      pi
+
+  o4av:
+Result:              3.14089744622523
+Deviation:           -0.00069520736456008 
+Function calls:      3084
+Recursion calls:     770
+absulute accuracy:   0.01
+relative accuracy:   0.01
+
+  o8av from matlib:
+Result:              3.14154866138172
+Deviation:           -4.39922080750499E-05
+absulute accuracy:   0.01
+relative accuracy:   0.01
+

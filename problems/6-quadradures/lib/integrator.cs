@@ -1,6 +1,7 @@
 using System;
 using static System.Math;
 using static System.Console;
+using static System.Double;
 using System.Collections.Generic;
 
 public class Integrator {
@@ -17,19 +18,44 @@ public class Integrator {
 		      , double absAcc=10e-2, double relAcc=10e-2, string varTrans=null) {
 	acc = absAcc;
 	eps = relAcc;
-	
+
 	double a = start;
 	double b = end;
+	
+	
 	if (varTrans==null) {
+	    
+	    if(IsNegativeInfinity(a) && !IsInfinity(b)) {
+		f = (t) => func(b-(1-t)/t)/t/t;
+		a=0;
+		b=1;
+		value = adapt(a,b);
+	    }
+	    else if(!IsInfinity(a) && IsPositiveInfinity(b)) {
+		f = (t) => func(a+(1-t)/t)/t/t;
+		a=0;
+		b=1;
+		value = adapt(a,b);
+	    }
+	    else if(IsNegativeInfinity(a) && IsPositiveInfinity(b)) {
+		f = (t) => func(t/(1-t*t))*(1+t*t)/(1-t*t)/(1-t*t);
+		a = -1;
+		b = 1;
+		value = adapt(a, b);
+	    }
+
+	    else {
 	    f = func;
 	    value = adapt(a, b);
+	    }
+	    
 	}
 	else if (varTrans=="CC") {
 	    f = (t) => func((b+a)/2.0 + (b-a)/2.0 * Cos(t))*Sin(t)*(b-a)/2;
 	    value = adapt(0, PI);
 	}
 	else {
-	    Write("Wrong variable transformation type entered. Will proceed without transform \n");
+	    Error.Write("Wrong variable transformation type entered. Will proceed without transform \n");
 	    f = func;
 	    value = adapt(a, b);
 	}
@@ -56,7 +82,7 @@ public class Integrator {
 		return Q1+Q2;
 	    }
 	    else {
-		Write("Maximum recursice depth reached! Returning best value.\n");
+		Error.Write("Maximum recursice depth reached! Returning best value.\n");
 		return Q;
 	    }
 	}

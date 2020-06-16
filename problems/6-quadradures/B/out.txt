@@ -1,0 +1,79 @@
+===== Test of integration routines with Clenshaw-Curtis transform ====
+
+=======================================================================
+i) 1/sqrt(x) from 0 to 1.
+
+  o4a with Clenshaw-Curtis transforms:
+Result:              1.99987031834155
+Deviation:           -0.000129681658454839
+Function calls:      8
+Recursion calls:     1
+absulute accuracy:   0.01
+relative accuracy:   0.01
+
+  o4a without Clenshaw-Curtis transforms:
+Result:              1.9995161175042
+Deviation:           -0.000483882495796895
+Function calls:      3996
+Recursion calls:     999
+absulute accuracy:   0.01
+relative accuracy:   0.01
+
+  o8av from matlib:
+Result:              2.00002495541116
+Deviation:           2.49554111615424E-05
+absulute accuracy:   0.01
+relative accuracy:   0.01
+
+______________________________________________
+
+ii) ln(x)/sqrt(x) from 0 to 1.
+
+  o4a with Clenshaw-Curtis transforms:
+Result:              -3.98144663054977
+Deviation:           0.0185533694502289
+Function calls:      28
+Recursion calls:     6
+absulute accuracy:   0.01
+relative accuracy:   0.01
+
+  o4a without Clenshaw-Curtis transforms:
+Result:              -3.99740428719504
+Deviation:           0.00259571280496118
+Function calls:      3996
+Recursion calls:     999
+absulute accuracy:   0.01
+relative accuracy:   0.01
+
+  o8av from matlib:
+Result:              -3.9393213368613
+Deviation:           0.060678663138698
+absulute accuracy:   0.01
+relative accuracy:   0.01
+
+______________________________________________
+
+iii) 4*sqrt(1-x*x).
+
+  o4a with Clenshaw-Curtis transforms:
+Result:              3.14159266117462
+Deviation:           7.58482787688308E-09
+Function calls:      120
+Recursion calls:     29
+absulute accuracy:   0.0001
+relative accuracy:   0.0001
+
+  o4a without Clenshaw-Curtis transforms:
+Result:              3.14159750770263
+Deviation:           4.85411283746018E-06
+Function calls:      80
+Recursion calls:     19
+absulute accuracy:   0.0001
+relative accuracy:   0.0001
+
+  o8av from matlib:
+Result:              3.14158836545417
+Deviation:           -4.28813562525221E-06
+absulute accuracy:   0.0001
+relative accuracy:   0.0001
+

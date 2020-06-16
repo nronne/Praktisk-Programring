@@ -1,4 +1,0 @@
-q = 0.666680932893738 with 9 recursion calls 
-diff = 1.42662270710137E-05
-q = 3.14183457802727 with 6 recursion calls 
-diff = 0.000241924437474506

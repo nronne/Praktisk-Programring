@@ -3,7 +3,7 @@ using System; using static System.Math; using static System.Double;
 public static partial class quad{
 
 public static double o8av
-(Func<double,double> f, double a, double b, double acc=1e-6, double eps=1e-6)
+''(Func<double,double> f, double a, double b, double acc=1e-6, double eps=1e-6)
 {
 /// Variable substitutions to treat infinite limits
 /// and singularities at end-points.

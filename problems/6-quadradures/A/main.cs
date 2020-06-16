@@ -10,15 +10,19 @@ class main {
 	var inte = new Integrator(f, 0, 1, absAcc:10e-5, relAcc:10e-5);
 	double q = inte.value;
 	int n = inte.n;
-	Write($"q = {q} with {n} recursion calls \n");
-	Write($"diff = {q-2.0/3.0}\n");
+
+	Write("==== TEST of integration routine ====\n");
+	Write("i) integration of sqrt(x) from 0 to 1:\n");
+	Write($"Result is {q} found with {n} recursion calls. \n");
+	Write($"Difference from analytic result is: {q-2.0/3.0}\n\n");
 	
 	f = x => 4*Sqrt(1-x*x);
 
 	inte = new Integrator(f, 0, 1, absAcc:10e-4, relAcc:10e-4);
 	q = inte.value;
 	n = inte.n;
-	Write($"q = {q} with {n} recursion calls \n");
-	Write($"diff = {q-PI}\n");
+	Write("ii) integration of 4*sqrt(1-x^2) from 0 to 1:\n");
+	Write($"Result is {q} found with {n} recursion calls. \n");
+	Write($"Difference from analytic result is: {q-PI}\n");
     }
 }

@@ -6,8 +6,9 @@ main.exe: main.cs matlib.dll
 	mcs -reference:matlib.dll $< 
 
 LIBDIR = ../lib
-matlib.dll: $(LIBDIR)/integrator.cs
+MATLIBDIR = ../../../matlib/integration
+matlib.dll: $(MATLIBDIR)/quado8.cs $(LIBDIR)/integrator.cs
 	mcs -target:library -out:$@ $^
 
 clean:
-	$(RM) *.exe *.txt
+	$(RM) *.exe *.txt *.dll

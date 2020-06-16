@@ -1,0 +1,8 @@
+==== TEST of integration routine ====
+i) integration of sqrt(x) from 0 to 1:
+Result is 0.666680932893738 found with 9 recursion calls. 
+Difference from analytic result is: 1.42662270710137E-05
+
+ii) integration of 4*sqrt(1-x^2) from 0 to 1:
+Result is 3.14183457802727 found with 6 recursion calls. 
+Difference from analytic result is: 0.000241924437474506
