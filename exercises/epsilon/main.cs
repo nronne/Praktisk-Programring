@@ -2,7 +2,7 @@ using static System.Console;
 
 class main{
     static int Main(){
-	// main.exercise();
+	main.exercise();
 	double a = 1.0;
 	double b = 1.4;
 	double tau = 0.5;
@@ -33,19 +33,19 @@ class main{
 	int max = int.MaxValue/2;
 	float floatSumUp = 0f;
 	for(int j = 1; j<max; j++) {floatSumUp += 1f/j;}
-	Write("Harmonic sum is : {0}\n", floatSumUp);
+	Write("Harmonic sum (sum up) is : {0}\n", floatSumUp);
 	
 	float floatSumDown = 0f;
 	for(int j = max-1; j>0; j--) {floatSumDown += 1f/j;}
-	Write("Harmonic sum is: {0}\n", floatSumDown);
+	Write("Harmonic sum (sum down) is: {0}\n", floatSumDown);
 	
 	double doubleSumUp = 0;
 	for(int j = 1; j<max; j++) {doubleSumUp += 1d/j;}
-        Write("double Harmonic sum is : {0}\n", doubleSumUp);
+        Write("double Harmonic sum (sum up) is : {0}\n", doubleSumUp);
 
 	double doubleSumDown = 0;
         for(int j = max-1; j>0; j--) {doubleSumDown += 1d/j;}
-        Write("double Harmonic sum is: {0}\n", doubleSumDown);
+        Write("double Harmonic sum (sum down) is: {0}\n", doubleSumDown);
 
 	Write("round off of integers: {0}\n", 3/5);
 	

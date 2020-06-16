@@ -21,14 +21,14 @@ out_tab.txt: Makefile
 	echo "13 $$(echo 's(13)/13' | bc -l) $$(echo 's(13)/(13*13) - c(13)/13' | bc -l) $$(echo '(3-13*13)*s(13)/(13*13*13) - 3*c(13)/(13*13)' | bc -l)" >> $@
 
 main.exe: main.cs bessel.cs matlib.dll
-	csc $(word 1,$^) $(word 2,$^) -reference:$(lastword $^)
+	mcs $(word 1,$^) $(word 2,$^) -reference:$(lastword $^)
 
 LIBDIR = ../../matlib
 SRC := $(LIBDIR)/ode/ode.cs
 SRC += $(LIBDIR)/matrix/vector.cs
 matlib.dll: $(SRC)
-	csc $^ -target:library -out:$@
+	mcs $^ -target:library -out:$@
 
 
 clean: 
-	$(RM) *.dll *.exe *.aux *.txt *.eps log *.pdf *.dvi log
+	$(RM) *.dll *.exe *.aux *.txt *.eps log *.pdf *.dvi *.log *.svg  

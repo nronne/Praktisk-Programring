@@ -17,10 +17,11 @@ static class main{
         Write($"integral of exp(-x^2) is {result}\n");
         Write("Note: sqrt(pi) = {0}\n", Sqrt(PI));
         // 3.
-        double p = 3.0;
-        f = (x) => Pow(Log(1/x), p);
-        result = quad.o8av(f, a, b);
-        Write($"integral of ln(1/x)^{p} is {result}\n");
-
+	
+        for(double p=3.0; p<6; p+=1.0){
+	    f = (x) => Pow(Log(1/x), p);
+	    result = quad.o8av(f, a, b);
+	    Write($"integral of ln(1/x)^{p} is {result}\n");
+	}
     }//Main
 }//main

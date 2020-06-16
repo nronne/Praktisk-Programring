@@ -4,8 +4,8 @@ using static System.Math;
 
 public static class bessel{
     public static double Bessel(double x, int n=0){
-        Func<double, vector, vector> j = delegate(double x, vector y){
-            return new vector(y[1], -2*y[1]/x-(x*x-n*(n+1))/(x*x) * y[0]);
+        Func<double, vector, vector> j = delegate(double z, vector y){
+            return new vector(y[1], -2*y[1]/z-(z*z-n*(n+1))/(z*z) * y[0]);
         };//j
 	double a=0.0001;
 	double y0 = 0;

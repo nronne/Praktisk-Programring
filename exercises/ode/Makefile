@@ -6,13 +6,13 @@ out.txt: main.exe
 	mono $< >$@ 2>log
 
 main.exe: main.cs matlib.dll
-	csc $< -reference:$(lastword $^)
+	mcs $< -reference:$(lastword $^)
 
 LIBDIR := ../../matlib
 SRC = $(LIBDIR)/ode/ode.cs
 SRC += $(LIBDIR)/matrix/vector.cs
 matlib.dll: $(SRC)
-	csc $^ -target:library -out:$@
+	mcs $^ -target:library -out:$@
 
 
 out_tab.txt: Makefile

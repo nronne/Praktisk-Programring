@@ -1,1 +1,11 @@
+My largest int is: 2147483647
+My smallest in is: -2147483648
+From int.minvalue we get: -2147483648
+machine epsilon for double: 1.11022302462516E-16
+machine epsilon for float: 5.960464E-08
+Harmonic sum (sum up) is : 15.40368
+Harmonic sum (sum down) is: 18.80792
+double Harmonic sum (sum up) is : 21.3716310803036
+double Harmonic sum (sum down) is: 21.3716310803008
+round off of integers: 0
 isSame is True

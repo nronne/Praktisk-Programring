@@ -2,6 +2,7 @@ using System;
 using static System.Console;
 using static System.Math;
 using static cmath;
+
 class main{
 	static int Main(){
 	    double t = 2;
@@ -34,7 +35,7 @@ class main{
 	    var invi=1/I;
 	    invi.print("1/I=");
 	    log(I).print("log(I)=");
-	    (I*PI/2).print("I*PI/2=");
+	    
 	    
 	    return 0;
 	}

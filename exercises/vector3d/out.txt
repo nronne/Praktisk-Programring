@@ -1,10 +1,12 @@
-Compiled!
-v = (1,2, 1,5, 2)
-vx = 1,2
-vx = 10
+Example with vector v:
+v = (1.2, 1.5, 2)
+v_x = 1.2
+Changing v_x to 10 and v_y to 3.
+v_x = 10
 v=(10, 3, 2)
-u=(2, 5, 7)
+Defining new vector u:u=(2, 5, 7)
+Calculating 2*u, u+v and cross-product of u and v 
 2*u = (4, 10, 14)
 u+v = (12, 8, 9)
 u x v = (11, 66, 44)
-Magnitude v = 10,630
+Magnitude v = 10.630
