@@ -7,17 +7,6 @@ class mainA {
     static void Main(){
 	randomTest(5);
 	particleInBox(99);
-
-	Write("\n \n__________________B(test)_________________\n \n");
-	int firstN = 2;
-	matrix A = randomSymmetricMatrix(5);
-	diagJacobi firstTest = new diagJacobi(A, firstN, eigVec:true, largestFirst:false);
-	(firstTest.l).print("eigenvalues (only first 2): ");
-	(firstTest.v).print("eigenvectors (only first 2): ");
-	diagJacobi test = new diagJacobi(A, eigVec:true);
-	(test.v).print("eigenvectors correct: ");
-	(test.l).print("eigenvalues correct: ");
-	
     }//Main
 
 
@@ -35,11 +24,13 @@ class mainA {
     }//randomMatrix
 
     static void randomTest(int n) {
+	Write("==== Test of diagonalizatrion on random matrix A: ====\n");
 	matrix a = randomSymmetricMatrix(n);
 	a.print("A = ");
 	diagJacobi test = new diagJacobi(a, eigVec:true);
+	Write("Performing Jacobi diagonalization:\n");
 	Write($"Number of sweeps: {test.sweeps}\n");
-	(((test.v).transpose()) * a * (test.v) ).print("V^T*A*V = ");
+	(((test.v).transpose()) * a * (test.v) ).print("V^T * A * V = ");
 	(test.l).print("eigenvalues = ");	
     }//randomTest
 

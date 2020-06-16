@@ -1,0 +1,12 @@
+First 2 eigenvalues found: -7.83721393654837, -5.1860936160207 
+First 2 eigenvectors found:
+     0.243     -0.148      0.348      0.322     -0.833 
+      0.41     -0.307     -0.738      0.438     0.0349 
+Eigenvalues and vectors from full diagonalization as comparison: 
+eigenvectors correct: 
+    -0.243      -0.41      0.403     -0.664      0.411 
+     0.148      0.307      0.749      0.437      0.364 
+    -0.348      0.738       -0.3     -0.244      0.429 
+    -0.322     -0.438     -0.337      0.529      0.558 
+     0.833    -0.0349      -0.27     -0.169      0.451 
+eigenvalues correct:      -7.84      -5.19       2.54       7.79       27.9 

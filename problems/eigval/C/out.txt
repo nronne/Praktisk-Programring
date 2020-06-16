@@ -1,0 +1,12 @@
+Random symmetric matrix A given as:
+A=
+      1.94       1.16       6.13       3.38       8.69       4.04 
+      1.16       1.93       8.79        9.4       5.76       5.23 
+      6.13       8.79        2.3       7.13       9.19      0.776 
+      3.38        9.4       7.13       8.53       3.67       8.92 
+      8.69       5.76       9.19       3.67       3.08       5.14 
+      4.04       5.23      0.776       8.92       5.14       8.49 
+eigenvalues found from classic jacobi algorithm:      -9.15      -8.22       -3.1       4.28       8.31       34.2 
+found with 80 rotations.
+Eigenvalues found from algorith with cyclic sweep:      -9.15      -8.22       -3.1       4.28       8.31       34.2 
+found with 90 rotations.
