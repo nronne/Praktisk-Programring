@@ -1,0 +1,13 @@
+====B====
+First 2 eigenvalues found: -6.99215277742574, -3.7839828127675 
+First 2 eigenvectors found:
+     0.269     -0.872      0.201      0.248      0.257 
+     0.662    0.00712     -0.726     0.0727     -0.172 
+Eigenvalues and vectors from full diagonalization as comparison: 
+eigenvectors correct: 
+     0.269      0.662      0.428     -0.198      0.517 
+    -0.872    0.00712    -0.0185      0.067      0.485 
+     0.201     -0.726       0.53    0.00915       0.39 
+     0.248     0.0727     -0.241      0.881      0.314 
+     0.257     -0.172     -0.691     -0.425      0.496 
+eigenvalues correct:      -6.99      -3.78      0.914       7.07       28.1 
