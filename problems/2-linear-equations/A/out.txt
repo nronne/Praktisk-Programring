@@ -1,0 +1,46 @@
+==== A.1 ====
+Testing on random tall matrix A:
+A =
+      9.49       4.71       9.25 
+      3.35       2.41       4.19 
+      2.98       9.45       7.26 
+       5.5       5.03        8.7 
+      1.14       8.89       5.41 
+Q and R matrices found from QR-factorization:
+Q = 
+     0.797     -0.293     -0.481 
+     0.282    -0.0358      0.109 
+      0.25      0.629     -0.107 
+     0.462     0.0386      0.851 
+    0.0955      0.718     -0.143 
+R = 
+      11.9       9.97       14.9 
+         0       11.1       5.93 
+         0          0       1.87 
+Testing that Q is orthogonal:
+Q^T*Q = 
+         1   4.16e-17   1.02e-16 
+  4.16e-17          1  -5.83e-16 
+  1.02e-16  -5.83e-16          1 
+Calculating the difference between A and QR, which should be 0:
+A-QR = 
+         0          0          0 
+         0          0          0 
+ -4.44e-16          0          0 
+         0          0          0 
+         0          0          0 
+
+==== A.2 ====
+Testing solver on random matrix A:
+A = 
+      2.62       3.82       6.81       4.31        9.8 
+      7.19       5.84       4.41       3.72       6.48 
+      3.94       6.86       5.44        3.4       1.39 
+      6.41       1.47      0.377       3.93       2.92 
+      8.86       4.35       3.49       3.55       6.52 
+and random vector b:
+b =       5.81       9.59       2.61       3.93       2.44 
+Solution to Ax=b is found to be:
+x =      -2.73       5.55      -6.45       1.92        2.8 
+Checking that x is a solution by calculating 0=Ax-b:
+A*x-b =  -5.33e-15   8.88e-15   1.33e-15   4.44e-15   5.77e-15 
