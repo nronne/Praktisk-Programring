@@ -1,0 +1,7 @@
+==== FIT RESULT ====
+          a              lambda
+ 142.404 +/- 4.249   0.171 +/- 0.004 
+====================
+
+This gives life-time of Ra-224: 4.045 +/- 0.083
+i.e not within todays known value.

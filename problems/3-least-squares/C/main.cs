@@ -20,21 +20,25 @@ class main {
 	Func<double, double>[] fs = {f0, f1};
 	ols myfit = new ols(fs, x, y, dy);
 	vector c = myfit.fit();
-	c.print("c=");
 
-	StreamWriter fit = new StreamWriter("out.txt");
 	StreamWriter data = new StreamWriter("data.txt");
 	
-	for (double t=0.75; t<16; t+=0.25) {
-	    fit.Write($"{t, 10:f8} {Exp(c[0])*Exp(-c[1]*t), 15:f16} \n");
-	}
-
 	for (int d=0; d<x.size; d++) {
 	    data.Write($"{x[d], 10:f8} {ys[d], 15:f16} {ys[d]*0.05, 15:f16} \n");
 	}
 
-	fit.Close();
 	data.Close();
+
+	vector dc = myfit.fitUncertainty();
+
+	StreamWriter fitwunc = new StreamWriter("fit.txt");
+	for (double t=0.75; t<16; t+=0.25) {
+	    fitwunc.Write($"{t, 10:f8}" +
+                        $" {Exp(c[0])*Exp(-c[1]*t), 15:f16}" +
+                        $" {Exp(c[0]+dc[0])*Exp(-(c[1]+dc[1])*t), 15:f16}" +
+                        $" {Exp(c[0]-dc[0])*Exp(-(c[1]-dc[1])*t), 15:f16} \n");
+	}
+	fitwunc.Close();
 	
     } // Main    
 } // main

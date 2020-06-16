@@ -20,8 +20,15 @@ class main {
 	Func<double, double>[] fs = {f0, f1};
 	ols myfit = new ols(fs, x, y, dy);
 	vector c = myfit.fit();
+	Write("==== FIT RESULT ====\n");
+	Write("    a     lambda\n ");
+	Write($"{Exp(c[0]):f3}   {c[1]:f3}\n");
+	Write("====================\n\n");
+	
+	Write($"Found half-life: {Log(2)/c[1]:f3} days\n");
+	Write($"Known half-life today: 3.66 days\n");
 
-	StreamWriter fit = new StreamWriter("out.txt");
+	StreamWriter fit = new StreamWriter("fit.txt");
 	StreamWriter data = new StreamWriter("data.txt");
 	
 	for (double t=0.75; t<16; t+=0.25) {
@@ -34,17 +41,6 @@ class main {
 
 	fit.Close();
 	data.Close();
-
-	vector dc = myfit.fitUncertainty();
-
-	StreamWriter fitwunc = new StreamWriter("outwunc.txt");
-	for (double t=0.75; t<16; t+=0.25) {
-	    fitwunc.Write($"{t, 10:f8}" +
-                        $" {Exp(c[0])*Exp(-c[1]*t), 15:f16}" +
-                        $" {Exp(c[0]+dc[0])*Exp(-(c[1]+dc[1])*t), 15:f16}" +
-                        $" {Exp(c[0]-dc[0])*Exp(-(c[1]-dc[1])*t), 15:f16} \n");
-	}
-	fitwunc.Close();
 	
     } // Main    
 } // main

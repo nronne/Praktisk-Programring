@@ -1,7 +1,7 @@
-Plot_Rutherford_Soddy.svg: plot.gpi out.txt data.txt
+Plot_Rutherford_Soddy_unc.svg: plotC.gpi fit.txt data.txt
 	gnuplot $<
 
-out.txt data.txt: main.exe
+out.txt data.txt fit.txt: main.exe
 	mono main.exe 
 
 main.exe: main.cs matlib.dll
@@ -10,7 +10,7 @@ main.exe: main.cs matlib.dll
 LIBDIR = ../../../matlib
 SRC += $(LIBDIR)/matrix/vector.cs
 SRC += $(LIBDIR)/matrix/matrix.cs
-SRC += ../../lineq/lib/qrDecompositionGS.cs
+SRC += ../../2-linear-equations/lib/qrDecompositionGS.cs
 SRC += ../lib/ols.cs
 matlib.dll: $(SRC)
 	mcs $^ -target:library -out:$@

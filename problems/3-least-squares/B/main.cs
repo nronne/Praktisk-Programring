@@ -20,12 +20,17 @@ class main {
 	Func<double, double>[] fs = {f0, f1};
 	ols myfit = new ols(fs, x, y, dy);
 	vector c = myfit.fit();
-	c.print("c=");
-
-
-	myfit.covMatrix().print("Sigma = ");
-	myfit.fitUncertainty().print("dc = ");
 	vector dc = myfit.fitUncertainty();
+	Write("==== FIT RESULT ====\n");
+	Write("          a              lambda\n ");
+	Write($"{Exp(c[0]):f3} +/- {Exp(c[0])*dc[0]:f3}   {c[1]:f3} +/- {dc[1]:f3} \n");
+	Write("====================\n\n");
 
+	Write($"This gives life-time of Ra-224: {Log(2)/c[1]:f3} +/- {Log(2)/c[1]/c[1] * dc[1]:f3}\n");
+	Write("i.e not within todays known value.\n");
+	//myfit.covMatrix().print("Sigma = ");
+	
+	
+	
     } // Main    
 } // main

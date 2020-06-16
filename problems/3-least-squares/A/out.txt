@@ -1,0 +1,7 @@
+==== FIT RESULT ====
+    a     lambda
+ 142.404   0.171
+====================
+
+Found half-life: 4.045 days
+Known half-life today: 3.66 days
