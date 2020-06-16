@@ -5,6 +5,7 @@ using static System.Math;
 
 class mainA {
     static void Main(){
+	Write("====B====\n");
 	int firstN = 2;
 	matrix A = randomSymmetricMatrix(5);
 	diagJacobi firstTest = new diagJacobi(A, firstN, eigVec:true, largestFirst:false);

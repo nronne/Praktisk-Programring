@@ -1,5 +1,4 @@
 all: Plot_time.svg out.txt
-.SILENT: in.txt time1.txt time2.txt time3.txt
 
 main.exe: main.cs matlib.dll
 	mcs $<  -reference:$(lastword $^) -out:$@
@@ -97,5 +96,5 @@ matlib.dll: $(SRC)
 	mcs $^ -target:library -out:$@
 
 make clean:
-	$(RM) *.exe *.txt *.dll *.svg
+	$(RM) *.exe *.txt *.dll *.svg *.log
 

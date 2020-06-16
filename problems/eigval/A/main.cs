@@ -5,6 +5,7 @@ using static System.Math;
 
 class mainA {
     static void Main(){
+	Write("====A====\n");
 	randomTest(5);
 	particleInBox(99);
     }//Main

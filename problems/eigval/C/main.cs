@@ -3,6 +3,7 @@ using System;
 
 class main {
     static void Main(string[] args) {
+	Write("====C====\n");
 	int n = int.Parse(args[0]);
 	randomTest(n);
     }
