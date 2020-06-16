@@ -1,4 +1,4 @@
-sincos.svg: out.txt main.cs
+sincos.svg: data.txt main.cs
 	echo '\
 	set term svg;\
 	set out "$@";\
@@ -13,18 +13,18 @@ sincos.svg: out.txt main.cs
 
 
 
-out.txt: main.exe main.cs
+data.txt: main.exe main.cs
 	mono $< > $@ 2> log.txt
 
 main.exe: main.cs  matlib.dll
-	csc $< -reference:$(lastword $^) -out:$@ 
+	mcs $< -reference:$(lastword $^) -out:$@ 
 
 LIBDIR = ../../../matlib
 SRC += $(LIBDIR)/matrix/vector.cs
 SRC += $(LIBDIR)/matrix/matrix.cs
 SRC += ../rk.cs
 matlib.dll: $(SRC)
-	csc $^ -target:library -out:$@
+	mcs $^ -target:library -out:$@
 
 make clean:
 	$(RM) *.exe *.txt *.dll *.svg

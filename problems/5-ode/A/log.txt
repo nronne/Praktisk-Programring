@@ -218,11 +218,11 @@ Step taken with step size: 0.0552787656350541
  Number of bad steps: 0 
 Step taken with step size: 0.0552787441293068 
  Number of bad steps: 0 
-Step taken with step size: 0.0552787226236127 
+Step taken with step size: 0.0552787226236128 
  Number of bad steps: 0 
-Step taken with step size: 0.0552787011179737 
+Step taken with step size: 0.0552787011179738 
  Number of bad steps: 0 
-Step taken with step size: 0.0552786796123882 
+Step taken with step size: 0.0552786796123883 
  Number of bad steps: 0 
 Step taken with step size: 0.0280805200175864 
  Number of bad steps: 0 
