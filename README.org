@@ -10,3 +10,5 @@ Clone repository as
 #+BEGIN_SRC shell
 git clone https://github.com/nronne/ppnm
 #+END_SRC
+
+All problems are sorted in subfolders A, B, C and maybe a library folder. Result are found in out.txt and/or plots as svg-files. 
