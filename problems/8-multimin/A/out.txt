@@ -1,0 +1,21 @@
+==== Finding the minimum of the Rosenbrock's Valley function with a=1 and b=100.  ==== 
+
+Start guess of minimum:         0          0 
+
+ The found minimum is:
+         1          1 
+
+ Minimum according to Wikipedia is:
+         1          1
+
+ 
+ ==== Finding the minimum of Himmelblau's function.  ====
+
+Start guess of minimum:
+         0          0 
+
+ The found minimum is:
+         3          2 
+
+ One minimum according to Wikipedia is:
+       3.0         2.0

@@ -26,7 +26,7 @@ class main {
 	    data[2].Add (double.Parse(w[2]));
 	}while(true);
        		
-	Write("_________Higgs_______\n");
+	Write("==== Higgs Boson data from Cern fit to Breit-Wigner formula ====\n");
 	/* double: E, vector: m, Gamma, A */
 	
 	Func<double, vector, double> F = delegate(double E, vector p) {
@@ -43,7 +43,10 @@ class main {
 	};
 	vector xstart = new vector(110, 2, 6);
 	vector xmin = minimizer.qnewton(D, xstart);
-	xmin.print("xmin=");
+	Write("\nThe found values for the Higgs Boson are:\n");
+	Write($"Mass:     {xmin[0]:f2}\n");
+	Write($"Width:    {xmin[1]:f2}\n\n");
+
 	
 	return 0;
     }

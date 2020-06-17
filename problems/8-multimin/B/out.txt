@@ -1,0 +1,6 @@
+==== Higgs Boson data from Cern fit to Breit-Wigner formula ====
+
+The found values for the Higgs Boson are:
+Mass:     125.97
+Width:    2.09
+
