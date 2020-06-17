@@ -1,0 +1,5 @@
+==== Schrödinger equation for hydrogen with shooting method ====
+
+Found ground state energy for rmax=8:
+epsilon:   -0.44
+deviation: 0.06

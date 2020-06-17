@@ -1,0 +1,7 @@
+==== Finding the extrenum of the Rosenbrock's Valley function with a=1 and b=100.  ==== 
+
+Start guess of root:
+         0          0 
+
+ After running newtons method, the found extremum is:
+         1          1 
