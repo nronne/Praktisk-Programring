@@ -1,0 +1,17 @@
+==== Test of Monte Carlo routine ====
+
+Area of unit circle on square domain.
+Analytic result:        pi
+Found result:           3.144
+Deviation:              0.00240734641020701
+Estimated error:        0.0164050723863078
+N:                      10000
+
+==== integral exercise in exercise ===== 
+
+Analytic result:        1.3932039296856768591842462603255
+Found result:           1.38686497487215
+Deviation:              -0.00633895481352198
+Estimated error:        0.00767458278699747
+N:                      1000000
+

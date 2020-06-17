@@ -1,5 +1,5 @@
 
-plot.svg: out.txt Makefile main.exe
+plot.svg: data.txt Makefile main.exe
 	echo '\
 	set term svg;\
 	set out "$@";\
@@ -13,10 +13,10 @@ plot.svg: out.txt Makefile main.exe
 	fit f(x) "$<" using 1:3 via A;\
 	plot "$<" using 1:2 w p ps 0.2 pt 7 title "residual"\
 	, "$<" using 1:3 w p ps 0.3 pt 6 title "relative error"\
-	, [10:1000] f(x) lc 1 title sprintf("fit: (%f)*1/sqrt(N)", A)\
+	, [10:10000] f(x) lc 1 title sprintf("fit: (%f)*1/sqrt(N)", A)\
 	' | gnuplot
 
-out.txt: main.exe
+data.txt: main.exe
 	mono $< > $@
 
 main.exe: main.cs matlib.dll
