@@ -59,7 +59,7 @@
 <g fill="none" color="black" stroke="black" stroke-width="0.50" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 <g fill="none" color="gray" stroke="currentColor" stroke-width="0.50" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='gray' stroke-dasharray='2,4' class="gridline"  d='M80.9,373.9 L566.0,373.9  '/></g>
+	<path stroke='gray' stroke-dasharray='2,4' class="gridline"  d='M80.9,373.9 L200.1,373.9 M557.7,373.9 L566.0,373.9  '/></g>
 <g fill="none" color="gray" stroke="gray" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -163,7 +163,7 @@
 <g fill="none" color="black" stroke="black" stroke-width="0.50" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 <g fill="none" color="gray" stroke="currentColor" stroke-width="0.50" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='gray' stroke-dasharray='2,4' class="gridline"  d='M80.9,57.6 L366.1,57.6 M557.7,57.6 L566.0,57.6  '/></g>
+	<path stroke='gray' stroke-dasharray='2,4' class="gridline"  d='M80.9,57.6 L566.0,57.6  '/></g>
 <g fill="none" color="gray" stroke="gray" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -202,7 +202,7 @@
 <g fill="none" color="black" stroke="black" stroke-width="0.50" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 <g fill="none" color="gray" stroke="currentColor" stroke-width="0.50" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='gray' stroke-dasharray='2,4' class="gridline"  d='M202.2,413.4 L202.2,18.1  '/></g>
+	<path stroke='gray' stroke-dasharray='2,4' class="gridline"  d='M202.2,413.4 L202.2,404.4 M202.2,368.4 L202.2,18.1  '/></g>
 <g fill="none" color="gray" stroke="gray" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -215,7 +215,7 @@
 <g fill="none" color="black" stroke="black" stroke-width="0.50" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 <g fill="none" color="gray" stroke="currentColor" stroke-width="0.50" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='gray' stroke-dasharray='2,4' class="gridline"  d='M323.5,413.4 L323.5,18.1  '/></g>
+	<path stroke='gray' stroke-dasharray='2,4' class="gridline"  d='M323.5,413.4 L323.5,404.4 M323.5,368.4 L323.5,18.1  '/></g>
 <g fill="none" color="gray" stroke="gray" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -228,7 +228,7 @@
 <g fill="none" color="black" stroke="black" stroke-width="0.50" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 <g fill="none" color="gray" stroke="currentColor" stroke-width="0.50" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='gray' stroke-dasharray='2,4' class="gridline"  d='M444.7,413.4 L444.7,63.1 M444.7,27.1 L444.7,18.1  '/></g>
+	<path stroke='gray' stroke-dasharray='2,4' class="gridline"  d='M444.7,413.4 L444.7,404.4 M444.7,368.4 L444.7,18.1  '/></g>
 <g fill="none" color="gray" stroke="gray" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -267,12 +267,12 @@
 </g>
 	<g id="gnuplot_plot_1" ><title>function values</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(498.9,40.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
+	<g transform="translate(498.9,381.3)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >function values</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='rgb(148,   0, 211)'  d='M507.2,36.1 L549.4,36.1 M80.9,145.9 L85.8,145.6 L90.7,146.1 L95.6,147.6 L100.5,150.1 L105.4,153.6
+	<path stroke='rgb(148,   0, 211)'  d='M507.2,377.4 L549.4,377.4 M80.9,145.9 L85.8,145.6 L90.7,146.1 L95.6,147.6 L100.5,150.1 L105.4,153.6
 		L110.3,158.2 L115.2,163.9 L120.1,170.6 L125.0,178.4 L129.9,187.1 L134.8,196.8 L139.7,207.4 L144.6,218.7
 		L149.5,230.7 L154.4,243.2 L159.3,256.1 L164.2,269.2 L169.1,282.5 L174.0,295.6 L178.9,308.4 L183.8,320.8
 		L188.7,332.5 L193.6,343.4 L198.5,353.3 L203.4,361.9 L208.3,369.3 L213.2,375.1 L218.1,379.3 L223.0,381.8
@@ -286,10 +286,10 @@
 		L502.3,318.8 L507.2,320.2 L512.1,320.3 L517.0,319.1 L521.9,316.8 L526.8,313.5 L531.7,309.2 L536.6,304.2
 		L541.5,298.4 L546.4,292.0 L551.3,285.2 L556.2,278.1 L561.1,270.7 L566.0,263.3  '/></g>
 	</g>
-	<g id="gnuplot_plot_2" ><title>predicted values</title>
+	<g id="gnuplot_plot_2" ><title>predicted values from neural network</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(498.9,58.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
-		<text><tspan font-family="Arial" >predicted values</tspan></text>
+	<g transform="translate(498.9,399.3)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
+		<text><tspan font-family="Arial" >predicted values from neural network</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -333,7 +333,7 @@
 	<use xlink:href='#gpPt6' transform='translate(529.6,309.7) scale(1.35)' color='rgb(  0, 158, 115)'/>
 	<use xlink:href='#gpPt6' transform='translate(541.7,297.4) scale(1.35)' color='rgb(  0, 158, 115)'/>
 	<use xlink:href='#gpPt6' transform='translate(553.9,282.7) scale(1.35)' color='rgb(  0, 158, 115)'/>
-	<use xlink:href='#gpPt6' transform='translate(528.3,54.1) scale(1.35)' color='rgb(  0, 158, 115)'/>
+	<use xlink:href='#gpPt6' transform='translate(528.3,395.4) scale(1.35)' color='rgb(  0, 158, 115)'/>
 </g>
 	</g>
 <g fill="none" color="white" stroke="rgb(  0, 158, 115)" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">

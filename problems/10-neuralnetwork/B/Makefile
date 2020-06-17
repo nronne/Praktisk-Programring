@@ -1,5 +1,5 @@
 
-plot.svg: tab.txt predict.txt Makefile
+Plot.svg: tab.txt predict.txt Makefile
 	echo '\
 	set term svg;\
 	set out "$@";\
@@ -28,10 +28,10 @@ MATLIB += $(LIBDIR)/matrix/matrix.cs
 MATLIB += $(LIBDIR)/complex/complex.cs
 MATLIB += $(LIBDIR)/complex/cmath.cs
 
-MATLIB += ../../minimization/minimizer.cs
-MATLIB += ../network.cs
-MATLIB += ../annGauss.cs
-MATLIB += ../myFuns.cs
+MATLIB += ../../8-multimin/minimizer.cs
+MATLIB += ../lib/network.cs
+MATLIB += ../lib/annGauss.cs
+MATLIB += ../lib/myFuns.cs
 
 matlib.dll: $(MATLIB)
 	mcs -target:library -out:$@ $^
