@@ -8,7 +8,7 @@ LIBDIR = ../../../matlib/matrix
 MATLIB = $(LIBDIR)/vector.cs
 MATLIB += $(LIBDIR)/matrix.cs
 MATLIB += ../../2-linear-equations/lib/qrDecompositionGS.cs
-MATLIB += newton.cs
+MATLIB += ../newton.cs
 matlib.dll: $(MATLIB)
 	mcs -target:library -out:$@ $^
 

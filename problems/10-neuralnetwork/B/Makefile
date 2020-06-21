@@ -31,10 +31,10 @@ MATLIB += $(LIBDIR)/complex/cmath.cs
 MATLIB += ../../8-multimin/minimizer.cs
 MATLIB += ../lib/network.cs
 MATLIB += ../lib/annGauss.cs
-MATLIB += ../lib/myFuns.cs
+MATLIB += ../../../exercises/gnuplot/myFuns.cs
 
 matlib.dll: $(MATLIB)
 	mcs -target:library -out:$@ $^
 
 clean:
-	$(RM) *.txt *.dll *.log *.exe
+	$(RM) *.txt *.dll *.log *.exe *.svg
